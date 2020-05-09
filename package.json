@@ -1,0 +1,26 @@
+{
+  "name": "stimp",
+  "version": "0.0.1",
+  "description": "Small lib for organize your JS by modules with state management and DOM elements autoselection",
+  "main": "./lib/index.js",
+  "repository": "https://github.com/ilya-pom/stimp.git",
+  "author": "Ilya Pomazkin  <mnogolikiy.ilay@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "examples": "webpack --config ./examples/webpack.js"
+  },
+  "dependencies": {
+    "redux": "^4.0.5",
+    "toposort": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
