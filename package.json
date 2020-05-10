@@ -1,12 +1,13 @@
 {
   "name": "stimp",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Small lib for organize your JS by modules with state management and DOM elements autoselection",
-  "main": "./lib/index.js",
+  "main": "./dist/stimp.js",
   "repository": "https://github.com/ilya-pom/stimp.git",
   "author": "Ilya Pomazkin  <mnogolikiy.ilay@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack --config ./webpack.js",
     "examples": "webpack --config ./examples/webpack.js"
   },
   "dependencies": {
