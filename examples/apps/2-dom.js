@@ -1,8 +1,10 @@
-import { App, DOMInteractModule } from '../../lib';
+import Stimp from '../../dist/stimp';
 
-const app = new App('main');
+console.log(Stimp);
 
-const menuModule = app.addModule(DOMInteractModule, 'menu', {
+const app = new Stimp.App('main');
+
+const menuModule = app.addModule(Stimp.DOMInteractModule, 'menu', {
   isOpen: false,
 });
 

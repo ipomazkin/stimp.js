@@ -1,8 +1,8 @@
-import { App, Module } from '../../lib';
+import Stimp from '../../dist/stimp';
 
-const app = new App('main');
+const app = new Stimp.App('main');
 
-const helloModule = app.addModule(Module, 'hello', {
+const helloModule = app.addModule(Stimp.Module, 'hello', {
   didISayHello: false,
 });
 
