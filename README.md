@@ -5,7 +5,7 @@ Small lib for organize your JS by modules with state management and DOM elements
 
 ## Features
 ### Apps and modules for project organization
-```ecmascript 6
+```javascript
 import Stimp from 'stimp';
 
 window.app = new Stimp.App('main'); // create app with name "main"
@@ -20,7 +20,7 @@ app.init(); // init the app
 You can access the module by "app.modules.hello".
 
 ### State management in React.js style
-```ecmascript 6
+```javascript
 const statefulModule = app.addModule(Stimp.Module, 'statefulModule', { // add stateful module
   isShow: false, // initial state
 });
@@ -70,7 +70,7 @@ There are 3 custom attributes:
 - "-i" for module's children list, but with separate it by ID - use here any value
 
 In JS we add this code:
-```ecmascript 6
+```javascript
 const menu = app.addModule(Stimp.DOMInteractModule, 'menu', { // add dom interactive module
   isShow: false, // initial state
 });
@@ -99,7 +99,7 @@ menu.onUpdateIsShow = (currentVal, prevVal) => { // add reaction on state change
 ### Modules init by their depends (when module "A" should be initialized before module "B")
 In some cases you need to init modules in exact order. To do that you can use module dependencies.
 
-```ecmascript 6
+```javascript
 const a = app.addModule(Stimp.DOMInteractModule, 'a', {}); // module a
 const b = app.addModule(Stimp.DOMInteractModule, 'b', {}, ['a']); // module b with module a in dependencies
 const c = app.addModule(Stimp.DOMInteractModule, 'c', {}, ['a']); // module c with module b in dependencies
