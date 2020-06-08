@@ -3,7 +3,7 @@
 # stimp.js
 Small lib for organize your JS by modules with state management and DOM elements autoselection
 
-JS docs [here](./docs/index.html)
+JS docs [here](https://ipomazkin.github.io/stimp.js/)
 
 ## Features
 ### Apps and modules for project organization
