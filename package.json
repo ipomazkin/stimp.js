@@ -1,6 +1,6 @@
 {
   "name": "stimp",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "Small lib for organize your JS by modules with state management and DOM elements autoselection",
   "keywords": [
     "state",
