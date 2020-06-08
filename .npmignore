@@ -1,2 +1,7 @@
 docs/
 examples/
+stimp.png
+.babelrc
+.gitignore
+jsdoc.json
+webpack.js
