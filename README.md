@@ -1,7 +1,9 @@
-![stimp.js logo](./stimp.png "stimp.js")
+![stimp.js logo](https://github.com/ipomazkin/stimp.js/raw/master/stimp.png "stimp.js")
 
 # stimp.js
 Small lib for organize your JS by modules with state management and DOM elements autoselection
+
+JS docs [here](./docs/index.html)
 
 ## Features
 ### Apps and modules for project organization
