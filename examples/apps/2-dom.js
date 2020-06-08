@@ -10,7 +10,10 @@ const menuModule = app.addModule(Stimp.DOMInteractModule, 'menu', {
 
 menuModule.onAfterDomInit(function () {
   this.dom.burger.addEventListener('click', () => {
-    this.setIsOpen(!this.getState().isOpen);
+    console.log(this);
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
   });
 });
 

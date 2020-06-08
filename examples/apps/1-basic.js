@@ -23,5 +23,3 @@ helloModule.setState({
 helloModule.setState({
   didISayHello: false,
 });
-
-helloModule.setDidISayHello(true);
