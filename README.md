@@ -29,9 +29,8 @@ const statefulModule = app.addModule(Stimp.Module, 'statefulModule', { // add st
 
 statefulModule.onInit(() => {
   setInterval(() => {
-    let currentState = statefulModule.getState(); // getting the current state
     statefulModule.setState({ // setting the new state
-      isShow: !currentState.isShow
+      isShow: !statefulModule.state.isShow
     });
   }, 1000);
 });
@@ -85,7 +84,7 @@ menu.onAfterDomInit(() => { // after DOM was selected
   let firstNavEl = navEls.link1; // access to the child elements with attribute -ch="navEl" -i="link1"
 
   burger.addEventListener('click', () => { // add some state changing on burger button click
-    menu.setState({ isShow: !menu.getState().isShow });
+    menu.setState({ isShow: !menu.state.isShow });
   });
 });
 
