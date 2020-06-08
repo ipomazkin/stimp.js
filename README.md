@@ -5,6 +5,20 @@ Small lib for organize your JS by modules with state management and DOM elements
 
 JS docs [here](https://ipomazkin.github.io/stimp.js/)
 
+## Install
+via NPM
+```
+npm i stimp
+```
+or via Yarn
+```
+yarn add stimp
+```
+or from CDN:
+```html
+<script src="https://unpkg.com/stimp@latest/dist/stimp.js"></script>
+```
+
 ## Features
 ### Apps and modules for project organization
 ```javascript
