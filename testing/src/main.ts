@@ -1,6 +1,6 @@
 import { createReactor } from '../../src/reactor/createReactor';
 
-let reactor = createReactor(({ useState, useEffect, useRef }) => {
+let reactor = createReactor(({ useState, useEffect, useRef, useMemo }) => {
   console.log('update start')
 
   const [counter, setCounter] = useState(0)
@@ -19,7 +19,12 @@ let reactor = createReactor(({ useState, useEffect, useRef }) => {
     }, 1000)
   }, [])
 
+  const calculatedCounter = useMemo(() => {
+    return counter * 10
+  }, [counter % 2 === 0])
+
   console.log('counter:', counter)
+  console.log('calculatedCounter:', calculatedCounter)
   console.log('update finished')
 })
 

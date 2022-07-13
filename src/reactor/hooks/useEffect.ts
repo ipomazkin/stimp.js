@@ -34,7 +34,7 @@ export function createUseEffectHook(registry: HooksRegistry) {
       return
     } else {
       if (storedRecord.type === "effect") {
-        if (isDependenciesChanged(storedRecord.data.dependencies, dependencies)) {
+        if (dependencies === undefined || isDependenciesChanged(storedRecord.data.dependencies, dependencies)) {
           setTimeout(() => {
             const cleanUp = storedRecord.data.cancellationCallback
             if (cleanUp) {

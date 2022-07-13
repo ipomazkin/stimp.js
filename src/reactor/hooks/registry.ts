@@ -1,8 +1,9 @@
 import { UseStateRegistryRecord } from './useState';
 import { UseEffectRegistryRecord } from './useEffect';
 import { UseRefRegistryRecord } from './useRef';
+import { UseMemoRegistryRecord } from './useMemo';
 
-export type HooksRegistryRecord = UseStateRegistryRecord | UseEffectRegistryRecord | UseRefRegistryRecord
+export type HooksRegistryRecord = UseStateRegistryRecord | UseEffectRegistryRecord | UseRefRegistryRecord | UseMemoRegistryRecord
 export type HooksRegistryRecords = HooksRegistryRecord[]
 
 export class HooksRegistry {
