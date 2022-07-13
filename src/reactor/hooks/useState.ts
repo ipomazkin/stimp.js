@@ -22,7 +22,11 @@ export function createUseStateHook(registry: HooksRegistry, triggerUpdate: Updat
       }
       registry.updateHookRecord(record)
     } else {
-      record = storedRecord
+      if (storedRecord.type === "useState") {
+        record = storedRecord
+      } else {
+        throw new Error(`Wrong hook's record's type`)
+      }
     }
 
     const setter = (action: SetStateAction<S>) => {
