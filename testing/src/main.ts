@@ -1,6 +1,6 @@
 import { createReactor } from '../../src/reactor/createReactor';
 
-let reactor = createReactor(({ useState, useEffect, useRef, useMemo }) => {
+let reactor = createReactor(({ useState, useEffect, useRef, useMemo, useCallback }) => {
   console.log('update start')
 
   const [counter, setCounter] = useState(0)
@@ -23,8 +23,13 @@ let reactor = createReactor(({ useState, useEffect, useRef, useMemo }) => {
     return counter * 10
   }, [counter % 2 === 0])
 
+  const logEveryThird = useCallback(() => {
+    console.log('logEveryThird:', counter)
+  }, [(counter + 1) % 3 === 0])
+
   console.log('counter:', counter)
   console.log('calculatedCounter:', calculatedCounter)
+  logEveryThird()
   console.log('update finished')
 })
 
