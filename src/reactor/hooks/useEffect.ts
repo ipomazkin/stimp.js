@@ -3,7 +3,7 @@ import { HooksRegistry } from './registry';
 import { isDependenciesChanged } from '../isDependenciesChanged';
 
 export type UseEffectRegistryRecord = {
-  type: 'useEffect'
+  type: 'effect'
   data: {
     dependencies?: DependencyList
     cancellationCallback?: EffectCleaningUpCallback
@@ -21,7 +21,7 @@ export function createUseEffectHook(registry: HooksRegistry) {
 
     if (storedRecord === undefined) {
       record = {
-        type: 'useEffect',
+        type: 'effect',
         data: {
           dependencies,
           cancellationCallback: undefined,
@@ -33,7 +33,7 @@ export function createUseEffectHook(registry: HooksRegistry) {
       registry.updateHookRecord(record)
       return
     } else {
-      if (storedRecord.type === "useEffect") {
+      if (storedRecord.type === "effect") {
         if (isDependenciesChanged(storedRecord.data.dependencies, dependencies)) {
           setTimeout(() => {
             const cleanUp = storedRecord.data.cancellationCallback

@@ -2,6 +2,7 @@ import { AllHooks } from './hooks';
 import { HooksRegistry } from './hooks/registry';
 import { createUseStateHook } from './hooks/useState';
 import { createUseEffectHook } from './hooks/useEffect';
+import { createUseRefHook } from './hooks/useRef';
 
 export type ReactorInit = () => void
 
@@ -16,7 +17,8 @@ export function createReactor(updater: UpdateFunction): ReactorInit {
     useState: createUseStateHook(registry, () => {
       runUpdate()
     }),
-    useEffect: createUseEffectHook(registry)
+    useEffect: createUseEffectHook(registry),
+    useRef: createUseRefHook(registry),
   }
 
   const runUpdate = () => {

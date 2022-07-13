@@ -1,21 +1,23 @@
 import { createReactor } from '../../src/reactor/createReactor';
 
-let reactor = createReactor(({ useState, useEffect }) => {
+let reactor = createReactor(({ useState, useEffect, useRef }) => {
   console.log('update start')
 
   const [counter, setCounter] = useState(0)
+  const counterRef = useRef(counter)
+  const setCounterReg = useRef(setCounter)
+
+  useEffect(() => {
+    counterRef.current = counter
+  }, [counter])
 
   useEffect(() => {
     console.log('effect started')
-    const i = setInterval(() => {
-      setCounter(new Date().getTime())
+    setInterval(() => {
+      setCounterReg.current(counterRef.current + 1)
       console.log('update interval')
     }, 1000)
-    return () => {
-      clearInterval(i)
-      console.log('effect removed')
-    }
-  }, [counter])
+  }, [])
 
   console.log('counter:', counter)
   console.log('update finished')

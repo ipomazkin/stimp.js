@@ -2,7 +2,7 @@ import { HooksRegistry } from './registry';
 import { Dispatch, UpdateTriggerCallback } from '../shared';
 
 export type UseStateRegistryRecord = {
-  type: 'useState'
+  type: 'state'
   data: any
 }
 
@@ -17,12 +17,12 @@ export function createUseStateHook(registry: HooksRegistry, triggerUpdate: Updat
 
     if (storedRecord === undefined) {
       record = {
-        type: 'useState',
+        type: 'state',
         data: initialState instanceof Function ? initialState() : initialState
       }
       registry.updateHookRecord(record)
     } else {
-      if (storedRecord.type === "useState") {
+      if (storedRecord.type === "state") {
         record = storedRecord
       } else {
         throw new Error(`Wrong hook's record's type`)
